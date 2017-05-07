@@ -71,3 +71,4 @@ theme: even
 deploy:
   type: git
   repo: https://github.com/1018598742/1018598742.github.io.git
+  branch: master

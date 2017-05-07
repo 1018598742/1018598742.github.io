@@ -1,5 +1,5 @@
 ---
-****title: 我的 SubLime Text 3
+title: 我的 SubLime Text 3
 date: 2017-05-07 13:05:45
 tags:
 ---
