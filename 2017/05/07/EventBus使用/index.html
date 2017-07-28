@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="EventBus 使用"/>
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="时尚古人">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.4.x" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/05/07/EventBus使用/"/>
+
+
+<meta name="description" content="EventBus 应该是一个一观察者模式和广播(还包含构建者模式)开发的各个线程间传递消息的库。 参考 Github 地址：EventBus 参考 EventBus 网址：greenrobot 参考学习网址：Android消息传递之EventBus 3.0使用详解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EventBus 使用">
+<meta property="og:url" content="http://yoursite.com/2017/05/07/EventBus使用/index.html">
+<meta property="og:site_name" content="时尚古人">
+<meta property="og:description" content="EventBus 应该是一个一观察者模式和广播(还包含构建者模式)开发的各个线程间传递消息的库。 参考 Github 地址：EventBus 参考 EventBus 网址：greenrobot 参考学习网址：Android消息传递之EventBus 3.0使用详解">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-07-28T12:50:37.018Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EventBus 使用">
+<meta name="twitter:description" content="EventBus 应该是一个一观察者模式和广播(还包含构建者模式)开发的各个线程间传递消息的库。 参考 Github 地址：EventBus 参考 EventBus 网址：greenrobot 参考学习网址：Android消息传递之EventBus 3.0使用详解">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.4.x" />
+
+
+
+
+
+
+
+<script>
+  var CONFIG = {
+    search: false,
+    searchPath: "/search.xml",
+    fancybox: false,
+    toc: true,
+  }
+</script>
+
+
+
+
+  
+
+
+
+    <title> EventBus 使用 · 时尚古人 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">时尚古人</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">时尚古人</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          EventBus 使用
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017年5月7日
+        </span>
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用-EventBus"><span class="toc-text">使用 EventBus</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Subscribe-threadMode-ThreadMode-MAIN"><span class="toc-text">@Subscribe(threadMode = ThreadMode.MAIN)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Subscribe-sticky-true"><span class="toc-text">@Subscribe(sticky = true)</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>EventBus 应该是一个一观察者模式和广播(还包含构建者模式)开发的各个线程间传递消息的库。</p>
+<p>参考 Github 地址：<a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">EventBus</a></p>
+<p>参考 EventBus 网址：<a href="http://greenrobot.org/eventbus/documentation/" target="_blank" rel="external">greenrobot</a></p>
+<p>参考学习网址：<a href="http://www.cnblogs.com/whoislcj/p/5595714.html" target="_blank" rel="external">Android消息传递之EventBus 3.0使用详解</a></p>
+<a id="more"></a>
+<h1 id="使用-EventBus"><a href="#使用-EventBus" class="headerlink" title="使用 EventBus"></a>使用 EventBus</h1><blockquote>
+<p>添加依赖</p>
+</blockquote>
+<p>在接收消息的类中要注册监听和取消监听</p>
+<blockquote>
+<p><code>EventBus.getDefault().register(this);</code></p>
+<p><code>EventBus.getDefault().unregister(this);</code></p>
+</blockquote>
+<p>注意：要想收到消息，必须已经注册了监听，不然无法收到消息。</p>
+<h3 id="Subscribe-threadMode-ThreadMode-MAIN"><a href="#Subscribe-threadMode-ThreadMode-MAIN" class="headerlink" title="@Subscribe(threadMode = ThreadMode.MAIN)"></a>@Subscribe(threadMode = ThreadMode.MAIN)</h3><p>括号中的内容可以不写，默认 threadMode = ThreadMode.POSTING</p>
+<ul>
+<li><p>ThreadMode.POSTING : 事件在哪个线程发出就在那个线程接收消息</p>
+</li>
+<li><p>ThreadMode.MAIN : 事件不论在哪个线程发出都会在主线程接收消息</p>
+</li>
+<li><p>ThreadMode.BACKGROUND : 在子线程接收消息，若在主线程发布，创建子线程接收，若在子线程就在该子线程接收</p>
+</li>
+<li><p>ThreadMode.ASYNC : 在子线程接收消息，不论在哪发布均创建子线程接收</p>
+</li>
+</ul>
+<h3 id="Subscribe-sticky-true"><a href="#Subscribe-sticky-true" class="headerlink" title="@Subscribe(sticky = true)"></a>@Subscribe(sticky = true)</h3><p>通过粘性事件可以实现订阅在发布之后接到消息</p>
+<p>注意 : 发送消息时要用</p>
+<blockquote>
+<p><code>EventBus.getDefault().postSticky</code></p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/05/07/需要记下的网址/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">需要记下的网址</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/05/07/常用指令/">
+        <span class="next-text nav-default">常用指令</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:18201691752@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">时尚古人</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.4.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.4.x"></script>
+
+    
+  </body>
+</html>

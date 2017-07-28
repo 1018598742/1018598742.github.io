@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[隐式意图匹配]]></title>
+      <url>/2017/07/28/%E9%9A%90%E5%BC%8F%E6%84%8F%E5%9B%BE%E5%8C%B9%E9%85%8D/</url>
+      <content type="html"><![CDATA[<p>隐式意图匹配规则</p>
+<a id="more"></a>
+<ul>
+<li>规则一：一个意图过滤器（intent-filter）至少包含一个 action , 否则它将阻塞所有意图匹配成功。</li>
+<li>规则二：一个意图（intent）中至少包含一个 action ,否则它将永远不会匹配成功。</li>
+<li>规则三：当采用隐式意图使用 startActivity(intent) 方法激活目标组件时，由于方法 startActivity(intent) 内部会自动做如下动作：intent.addCategory(“android.intent.category.DEFAULT”); 因此 intent 中必须包含 category=”android.intent.category.DEFAULT” 的类别，因此如果目标 Activity 想匹配成功，则必须在意图过滤器中包含 <category android:name="android.intent.category.DEFAULT"> 的类别，否则肯定不会匹配成功。</category></li>
+<li>规则四：如果意图过滤器中有的东西，在意图中可以没有照样匹配成功，反过来，如果意图中有的东西，在意图过滤器中没有则一定不会匹配成功。</li>
+<li>规则五：在一个 activity 中可以写多个意图过滤器，只要有一个能够和 intent 中的信息匹配成功则就可以激活目标组件。</li>
+<li>规则六：如果在意图过滤器中指定了 mimeType 则在意图中也必须指定相同的 mimeType ，否则匹配失败。</li>
+<li>规则七：如果在意图过滤器中指定了 scheme ，则在意图中设置 data 时必须也指定相同的 scheme ，否则匹配失败；如果同时在意图过滤器中也指定了 host ，那么只有当 intent 中 data 的内容也能和意图过滤器中的 scheme 和 host 相匹配才能成功。 如果同时指定了 path 或者 android:pathPrefix 或者 android:pathPattern ,那么意图中如果指定的 data 的内容整个和 path 或者 android:pathPrefix 或者 android:pathPattern 匹配成功即可匹配成功。</li>
+<li>规则八：如果在意图过滤器中只设置了 data 没有设置 type, 那么意图中也只能设置 data 不能设置 type 才能匹配成功。intetn.setData(data);</li>
+<li>规则九：如果在意图过滤器中只设置了 type 没有设置 data ，那么意图中也只能设置 type 不设置 data 才能匹配成功。intetn.setType(type);</li>
+<li>规则十：如果在意图过滤器中同时设置了 data 和 type ，那么在意图中也必须同时设置 data 和 type 才能匹配成功。 intent.setDataAndType(data,type); </li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/2017/07/28/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[我的 Android Studio]]></title>
+      <url>/2017/05/07/%E6%88%91%E7%9A%84AndroidStudio/</url>
+      <content type="html"><![CDATA[<p>重装电脑后，重新下载了 Android Studio 接下来重新配置了</p>
+<a id="more"></a>
+<p>下载下来第一次打开，字好小，又想去改字体了，不着急，先找一下之前收藏过的配置博客<a href="http://www.cnblogs.com/smyhvae/p/4390905.html" target="_blank" rel="external">第一次使用Android Studio时你应该知道的一切配置</a></p>
+<p>奥，我先来查看一下 SDK 和 JDK 配置了吗，点击<img src="C:\Users\Administrator\Desktop\AndroidStudio截图1.png" alt="AndroidStudio截图1"></p>
+<p>查看一下，厉害了，Android Studio 包含了 SDK 和 JDK ，正好配置下 Java 环境变量，找到 Java 的存储路径 C:\Program Files\Android\Android Studio\jre</p>
+<p>新建 JAVA_HOME</p>
+<p><img src="C:\Users\Administrator\Desktop\java环境变量.png" alt="java环境变量"></p>
+<p>添加 %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</p>
+<p>好了，继续我的 Android Studio 有人喜欢修改主题，我还是用原样吧</p>
+<p>下面直接改字体 File —&gt; Settings<img src="C:\Users\Administrator\Desktop\AndroidStudio改字体.png" alt="AndroidStudio改字体"></p>
+<p>关闭重新打开直接加载工程<br><img src="C:\Users\Administrator\Desktop\AndroidStudio修改重启.png" alt="AndroidStudio修改重启"></p>
+<p>设置大小写不敏感</p>
+<p><img src="C:\Users\Administrator\Desktop\AndroidStudio设置大小写不敏感.png" alt="AndroidStudio设置大小写不敏感"></p>
+<p>没改几个设置，我觉得原来的设置已经很人性化了，下面更改几个模版，找到我之前保存 github 上的模版</p>
+<p>第一个 懒汉式单例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">#if ($&#123;PACKAGE_NAME&#125; != &quot;&quot;)package $&#123;PACKAGE_NAME&#125;;#end</div><div class="line"></div><div class="line">#if ($&#123;IMPORT_BLOCK&#125; != &quot;&quot;)$&#123;IMPORT_BLOCK&#125;</div><div class="line">#end</div><div class="line">#parse(&quot;File Header.java&quot;)</div><div class="line"></div><div class="line">#if ($&#123;VISIBILITY&#125; == &quot;PUBLIC&quot;)public #end class $&#123;NAME&#125; #if ($&#123;SUPERCLASS&#125; != &quot;&quot;)extends $&#123;SUPERCLASS&#125; #end #if ($&#123;INTERFACES&#125; != &quot;&quot;)implements $&#123;INTERFACES&#125; #end &#123;</div><div class="line">    private volatile static $&#123;NAME&#125; ourInstance;</div><div class="line">    private $&#123;NAME&#125;() &#123;&#125;</div><div class="line">    #if ($&#123;VISIBILITY&#125; == &quot;PUBLIC&quot;)public #end static $&#123;NAME&#125; getInstance() &#123;</div><div class="line">        	if(ourInstance == null)&#123;</div><div class="line">  			synchronized ($&#123;NAME&#125;.class) &#123;</div><div class="line">  				if(ourInstance == null)&#123;</div><div class="line">  					ourInstance = new $&#123;NAME&#125;();</div><div class="line">  				&#125;</div><div class="line">  			&#125;</div><div class="line">  		&#125;</div><div class="line">        return ourInstance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="C:\Users\Administrator\Desktop\AndroidStudio新建模版.png" alt="AndroidStudio新建模版"></p>
+<p>要了解可以自定义，通过快捷键快速生成需要的代码， Live Templetes 中系统已经存在了很多默认的模版，可以参考这写自己的。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[我的 SubLime Text 3]]></title>
+      <url>/2017/05/07/%E6%88%91%E7%9A%84sublime%E5%AE%89%E8%A3%85%E7%9A%84%E6%8F%92%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>电脑安装了固态硬盘，加了内存条，重装了系统，一切都是新的，要重新配置一下 sublime text 3 了。</p>
+<a id="more"></a>
+<h1 id="修改外观"><a href="#修改外观" class="headerlink" title="修改外观"></a>修改外观</h1><p>首先先改变一下 Sublime Text 的外观，初始状态很不舒服啊。</p>
+<blockquote>
+<p>Sublime Text  —&gt; Preferences  —&gt;  Settings</p>
+</blockquote>
+<p>在这里尽情修改。</p>
+<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>先插入一个官方地址 <a href="https://packagecontrol.io/browse" target="_blank" rel="external">Package Control</a></p>
+<p>第一步当然是打开 Sublime Text ，使用组合键 ctrl + shift  + p 调出命令面板，输入指令 pci 进入安装，下面开始装插件。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">插件名</th>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Emmet</td>
+<td style="text-align:center">Tab</td>
+<td style="text-align:center">自动补全 html</td>
+</tr>
+<tr>
+<td style="text-align:center">AdvancedNewFile</td>
+<td style="text-align:center">Ctrl + Alt + n</td>
+<td style="text-align:center">快速新建文件</td>
+</tr>
+<tr>
+<td style="text-align:center">SublimeLinter</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">语法检查</td>
+</tr>
+<tr>
+<td style="text-align:center">SideBarEnhancements</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">侧边栏加强</td>
+</tr>
+<tr>
+<td style="text-align:center">Html5</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">ColorPicker</td>
+<td style="text-align:center">Ctrl + Shift + C</td>
+<td style="text-align:center">颜色选择器</td>
+</tr>
+<tr>
+<td style="text-align:center">All Autocomplete</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">自动查找其他文件的匹配信息补全</td>
+</tr>
+</tbody>
+</table>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Ctrl+Shift+P</td>
+<td style="text-align:center">打开命令面板</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+P</td>
+<td style="text-align:center">搜索项目中的文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+G</td>
+<td style="text-align:center">跳转到第几行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+W</td>
+<td style="text-align:center">关闭当前打开文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+W</td>
+<td style="text-align:center">关闭所有打开文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+V</td>
+<td style="text-align:center">粘贴并格式化</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+D</td>
+<td style="text-align:center">选择单词，重复可增加选择下一个相同的单词</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+L</td>
+<td style="text-align:center">选择行，重复可依次增加选择下一行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+L</td>
+<td style="text-align:center">选择多行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+Enter</td>
+<td style="text-align:center">在当前行前插入新行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+X</td>
+<td style="text-align:center">删除当前行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+M</td>
+<td style="text-align:center">跳转到对应括号</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+U</td>
+<td style="text-align:center">软撤销，撤销光标位置</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+J</td>
+<td style="text-align:center">选择标签内容</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+F</td>
+<td style="text-align:center">查找内容</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+F</td>
+<td style="text-align:center">查找并替换</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+H</td>
+<td style="text-align:center">替换</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+R</td>
+<td style="text-align:center">前往 method</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+N</td>
+<td style="text-align:center">新建窗口</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+K+B</td>
+<td style="text-align:center">开关侧栏</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+M</td>
+<td style="text-align:center">选中当前括号内容，重复可选着括号本身</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+F2</td>
+<td style="text-align:center">设置/删除标记</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+/</td>
+<td style="text-align:center">注释当前行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+/</td>
+<td style="text-align:center">当前位置插入注释</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Alt+/</td>
+<td style="text-align:center">块注释，并Focus到首行，写注释说明用的</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+A</td>
+<td style="text-align:center">选择当前标签前后，修改标签用的</td>
+</tr>
+<tr>
+<td style="text-align:center">F11</td>
+<td style="text-align:center">全屏</td>
+</tr>
+<tr>
+<td style="text-align:center">Shift+F11</td>
+<td style="text-align:center">全屏免打扰模式，只编辑当前文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt+F3</td>
+<td style="text-align:center">选择所有相同的词</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt+</td>
+<td style="text-align:center">闭合标签</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt+Shift+数字</td>
+<td style="text-align:center">分屏显示</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt+数字</td>
+<td style="text-align:center">切换打开第N个文件</td>
+</tr>
+<tr>
+<td style="text-align:center">Shift+右键拖动</td>
+<td style="text-align:center">光标多不，用来更改或插入列内容</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+Shift+上下键</td>
+<td style="text-align:center">可替换行</td>
+</tr>
+</tbody>
+</table>
+<p>自己自定义快捷键</p>
+<blockquote>
+<p>Sublime Text —&gt; Preferences —&gt; Key Bindings   可以在右侧自己定义自己的快捷键</p>
+</blockquote>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[记下我用的软件]]></title>
+      <url>/2017/05/07/%E8%AE%B0%E4%B8%8B%E6%88%91%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>我也许要重装电脑，记下现在有的软件</p>
+<a id="more"></a>
+<ul>
+<li>AndroidStudio 必装</li>
+<li>Sublime Text 3.0 装上要查一下需要哪些插件， emmet 要有，HTML 需要的。</li>
+<li>Google Chrome 谷歌浏览器要有，记得登录上账号，还有一些书签呢</li>
+<li><a href="https://github.com/oldj/SwitchHosts" target="_blank" rel="external">SwitchHosts</a> 翻墙使用，效果不错</li>
+<li>FastStone Capture 有效帮助我截屏</li>
+<li>Git 这么重要竟然忘了</li>
+<li>Typora 真是该死，同样重要，现在还在用它记下这些信息呢</li>
+<li>Project 应该以后会用</li>
+<li>HBuilder 一个写 HTML 的工具</li>
+<li>网易闪电邮 一个可以记录多个邮箱账号的程序，用它接邮件有延迟</li>
+<li>联想驱动管理 帮助下载联想的驱动</li>
+<li>Genymotion Android 虚拟机</li>
+<li>Hexo 生成博客的</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[插件 emmet 使用快捷键]]></title>
+      <url>/2017/05/07/%E6%8F%92%E4%BB%B6emmet%E4%BD%BF%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+      <content type="html"><![CDATA[<p>emmet 是 html 的一个一键书写的插件，可以使用到 sublime text 3 中</p>
+<a id="more"></a>
+<p>快速生成的写法</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt; &lt;li&gt;item1&lt;/li&gt;</div><div class="line">&gt; &lt;li&gt;item2&lt;/li&gt;</div><div class="line">&gt; &lt;li&gt;item3&lt;/li&gt;</div><div class="line">&gt; &lt;li&gt;item4&lt;/li&gt;</div><div class="line">&gt;</div><div class="line">&gt; li&#123;item $&#125;*4  然后按 tab 键或者 Ctrl + e</div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">&gt;</div><div class="line">&gt; &lt;li&gt;&lt;a href=&quot;&quot;&gt;item 1&lt;/a&gt;&lt;/li&gt;</div><div class="line">&gt; &lt;li&gt;&lt;a href=&quot;&quot;&gt;item 2&lt;/a&gt;&lt;/li&gt;</div><div class="line">&gt; &lt;li&gt;&lt;a href=&quot;&quot;&gt;item 3&lt;/a&gt;&lt;/li&gt;</div><div class="line">&gt; &lt;li&gt;&lt;a href=&quot;&quot;&gt;item 4&lt;/a&gt;&lt;/li&gt;</div><div class="line">&gt;</div><div class="line">&gt; li*4&gt;a&#123;item $&#125; 然后按 tab 键或者 Ctrl + e</div><div class="line">&gt;</div></pre></td></tr></table></figure></blockquote>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Google浏览器生成PDF文件]]></title>
+      <url>/2017/05/07/Google%E6%B5%8F%E8%A7%88%E5%99%A8%E7%94%9F%E6%88%90PDF%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>用谷歌浏览器生成 PDF 文件</p>
+<a id="more"></a>
+<h3 id="1-在地址栏输入"><a href="#1-在地址栏输入" class="headerlink" title="1.在地址栏输入"></a>1.在地址栏输入</h3><h3 id="data-text-html-lt-html-contenteditable-gt"><a href="#data-text-html-lt-html-contenteditable-gt" class="headerlink" title="data:text/html, &lt;html contenteditable&gt;"></a><code>data:text/html, &lt;html contenteditable&gt;</code></h3><h3 id="2-输入信息"><a href="#2-输入信息" class="headerlink" title="2.输入信息"></a>2.输入信息</h3><h3 id="3-用一下按键组合，改变文字格式"><a href="#3-用一下按键组合，改变文字格式" class="headerlink" title="3.用一下按键组合，改变文字格式"></a>3.用一下按键组合，改变文字格式</h3><ul>
+<li>Ctrl+U=下划线</li>
+<li>Ctrl+ I=斜体</li>
+<li>Ctrl+ B=粗体</li>
+<li>Ctrl+ Y=重做</li>
+<li>Ctrl+ Shift+Z=复制纯文本</li>
+<li>Ctrl+P=打印</li>
+</ul>
+<h3 id="4-设置完成后，利用-Ctrl-P-在目标打印机选择更改，改为另存为-PDF，选好之后点击保存"><a href="#4-设置完成后，利用-Ctrl-P-在目标打印机选择更改，改为另存为-PDF，选好之后点击保存" class="headerlink" title="4.设置完成后，利用 Ctrl + P 在目标打印机选择更改，改为另存为 PDF，选好之后点击保存"></a>4.设置完成后，利用 Ctrl + P 在目标打印机选择更改，改为另存为 PDF，选好之后点击保存</h3>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[DataBinding 的记录]]></title>
+      <url>/2017/05/07/DataBinding%E7%9A%84%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>记录一下 DataBinding 中自己之前不明白的问题</p>
+<a id="more"></a>
+<ul>
+<li>在布局中，如： android:onClick=”@{(v)-&gt; handler.jumpClick(v)}” 前面那个括号中表示的是 onClick 这个方法的参数，后面那个括号表示的是 jumpClick(View view) 这个方法中的参数</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[需要记下的网址]]></title>
+      <url>/2017/05/07/%E9%9C%80%E8%A6%81%E8%AE%B0%E4%B8%8B%E7%9A%84%E7%BD%91%E5%9D%80/</url>
+      <content type="html"><![CDATA[<p>需要记下的一些网址，防止忘记找不到地方，做个备注</p>
+<a id="more"></a>
+<ul>
+<li><a href="https://juejin.im/post/5848d96761ff4b0058c9d3dc" target="_blank" rel="external">给初学者的RxJava2.0教程(一)</a> 最近 「2017年4月21日02:42:21」在看的 RxJava ，写的比较全</li>
+<li><a href="http://www.jianshu.com/p/a620a2664f58" target="_blank" rel="external">手把手教学 Android用jsoup解析html</a> 关于使用 jsoup 爬取网页上信息的开源库介绍</li>
+</ul>
+<ul>
+<li><a href="https://developer.android.google.cn/develop/index.html" target="_blank" rel="external">AndroidStudio</a> 安装AndroidStudio</li>
+<li><a href="https://connorlin.github.io/2016/07/02/Android-Data-Binding-%E7%B3%BB%E5%88%97-%E4%B8%80-%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">Android Data Binding 系列(一) – 详细介绍与使用</a> / [ <a href="http://blog.csdn.net/zhaizu/article/details/51491455" target="_blank" rel="external">安卓 Data Binding 使用方法总结（姐姐篇）</a>]</li>
+<li><a href="http://gitref.org/zh/inspect/" target="_blank" rel="external">Git 参考手册</a> 这个必须要记下来，git 的基本操作，就是因为没早学，吃了大亏，看一遍只能懂皮毛，到时忘了可以来查</li>
+<li><a href="http://www.d9blog.com/post/10000.html" target="_blank" rel="external">Typora中文教程</a> 作为 markdown 编辑工具确实挺好用的，这是一个关于 typora 的教程，也是忘了来查吧</li>
+<li><a href="http://www.cnblogs.com/smyhvae/p/4390905.html" target="_blank" rel="external">第一次使用Android Studio时你应该知道的一切配置</a> 感觉挺全的，记下来，确实用到了几个配置，以后要把自己的常用配置记下来</li>
+<li><a href="http://jaeger.itscoder.com/android/2016/02/14/android-studio-tips.html" target="_blank" rel="external">Android Studio 小技巧/快捷键 合集</a> 包含内容也是挺全的，但是都记住能力有限，只能想起来用什么来查了，作为备用</li>
+<li><a href="http://www.androiddevtools.cn/" target="_blank" rel="external">AndroidDevTools</a> 包含了很多工具，可以参考，目前感觉有些东西过时了，用的比较少</li>
+<li><a href="http://zhichao1208.farbox.com/post/diy/vimxue-xi-ji-chu-an-jian" target="_blank" rel="external">VIM学习</a> 通过 vim 摆脱鼠标，感觉挺牛逼，不好学， Android 还没学好呢</li>
+<li><a href="http://deerchao.net/tutorials/regex/regex.htm#mission" target="_blank" rel="external">正则表达式30分钟入门教程</a> 就看过一次，先记下万一丢了可惜</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[EventBus 使用]]></title>
+      <url>/2017/05/07/EventBus%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>EventBus 应该是一个一观察者模式和广播(还包含构建者模式)开发的各个线程间传递消息的库。</p>
+<p>参考 Github 地址：<a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">EventBus</a></p>
+<p>参考 EventBus 网址：<a href="http://greenrobot.org/eventbus/documentation/" target="_blank" rel="external">greenrobot</a></p>
+<p>参考学习网址：<a href="http://www.cnblogs.com/whoislcj/p/5595714.html" target="_blank" rel="external">Android消息传递之EventBus 3.0使用详解</a></p>
+<a id="more"></a>
+<h1 id="使用-EventBus"><a href="#使用-EventBus" class="headerlink" title="使用 EventBus"></a>使用 EventBus</h1><blockquote>
+<p>添加依赖</p>
+</blockquote>
+<p>在接收消息的类中要注册监听和取消监听</p>
+<blockquote>
+<p><code>EventBus.getDefault().register(this);</code></p>
+<p><code>EventBus.getDefault().unregister(this);</code></p>
+</blockquote>
+<p>注意：要想收到消息，必须已经注册了监听，不然无法收到消息。</p>
+<h3 id="Subscribe-threadMode-ThreadMode-MAIN"><a href="#Subscribe-threadMode-ThreadMode-MAIN" class="headerlink" title="@Subscribe(threadMode = ThreadMode.MAIN)"></a>@Subscribe(threadMode = ThreadMode.MAIN)</h3><p>括号中的内容可以不写，默认 threadMode = ThreadMode.POSTING</p>
+<ul>
+<li><p>ThreadMode.POSTING : 事件在哪个线程发出就在那个线程接收消息</p>
+</li>
+<li><p>ThreadMode.MAIN : 事件不论在哪个线程发出都会在主线程接收消息</p>
+</li>
+<li><p>ThreadMode.BACKGROUND : 在子线程接收消息，若在主线程发布，创建子线程接收，若在子线程就在该子线程接收</p>
+</li>
+<li><p>ThreadMode.ASYNC : 在子线程接收消息，不论在哪发布均创建子线程接收</p>
+</li>
+</ul>
+<h3 id="Subscribe-sticky-true"><a href="#Subscribe-sticky-true" class="headerlink" title="@Subscribe(sticky = true)"></a>@Subscribe(sticky = true)</h3><p>通过粘性事件可以实现订阅在发布之后接到消息</p>
+<p>注意 : 发送消息时要用</p>
+<blockquote>
+<p><code>EventBus.getDefault().postSticky</code></p>
+</blockquote>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[常用指令]]></title>
+      <url>/2017/05/07/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>平时用到的一些指令</p>
+<a id="more"></a>
+<h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><p>参考：<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo</a></p>
+<ul>
+<li>写作创建新文章 $ hexo new 「title」</li>
+<li>发布到服务器 $ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</li>
+</ul>
+<h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><p>参考：<a href="http://gitref.org/zh/creating/" target="_blank" rel="external">Git 参考手册</a></p>
+<ul>
+<li>初始化 $ git init</li>
+<li>查看当前目录下的文件 $ ls</li>
+<li>查看项目的当前状态 $ git status -s</li>
+<li>提交到git库中，这里是本地库 $ git commit -am ‘your description’</li>
+<li>添加远程仓库 $ git remote add 「alias」「url」</li>
+<li>查看远程仓库的状态 $ git remote -v</li>
+<li>推送本地数据到远程仓库 $ git push 「alias」「branch」</li>
+</ul>
+<h1 id="CMD-获取存留在电脑上的-wifi-信息"><a href="#CMD-获取存留在电脑上的-wifi-信息" class="headerlink" title="CMD 获取存留在电脑上的 wifi 信息"></a>CMD 获取存留在电脑上的 wifi 信息</h1><p>该指令会展示该电脑连接过的 wifi 信息，测试过，有效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">for /f &quot;skip=9 tokens=1,2 delims=:&quot; %i in (&apos;netsh wlan show profiles&apos;) do  @echo%j | findstr -i -v echo | netsh wlan show profiles %j key=clear</div></pre></td></tr></table></figure>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[通过 WLAN	连接到设备]]></title>
+      <url>/2017/05/07/%E9%80%9A%E8%BF%87%20WLAN%20%E8%BF%9E%E6%8E%A5%E5%88%B0%E8%AE%BE%E5%A4%87/</url>
+      <content type="html"><![CDATA[<p>舍弃数据线，使用 WIFI 进行项目调试。参考网址：<a href="https://developer.android.com/studio/command-line/adb.html?hl=zh-cn#devicestatus" target="_blank" rel="external">Android 调试桥</a></p>
+<a id="more"></a>
+<ol>
+<li>使用 USB 电缆将设备连接到主计算机。</li>
+<li>设置目标设备以侦听端口 5555 上的 TCP/IP 连接。 $ adb tcpip 5555</li>
+<li>不用等待，直接断开 USB 电缆连接。</li>
+<li>查找 Android 设备的 IP 地址。</li>
+<li>通过 IP 地址识别设备来连接。 $ adb connect device_ip_address</li>
+<li>确认主计算机已连接至目标设备。 $ adb devices</li>
+</ol>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android Studio 插件]]></title>
+      <url>/2017/05/07/Android%20Studio%20%E6%8F%92%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>Android Studio 使用的一些插件，参考网址：<a href="https://ydmmocoo.github.io/2016/06/28/Android-Studio%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86/" target="_blank" rel="external">Android Studio 插件整理</a></p>
+<a id="more"></a>
+<h1 id="GsonFormat"><a href="#GsonFormat" class="headerlink" title="GsonFormat"></a><a href="http://plugins.jetbrains.com/plugin/7654?pr=androidstudio" target="_blank" rel="external">GsonFormat</a></h1><p>快速将 Json 字符串转换成一个 Java Bean , 免去我们根据 Json 字符串手写对应 Java Bean 的过程。</p>
+<p><a href="http://plugins.jetbrains.com/files/7654/screenshot_15729.png" target="_blank" rel="external"><img src="http://plugins.jetbrains.com/files/7654/screenshot_15729.png" alt="img"></a></p>
+<h1 id="JsonOnlineViewer"><a href="#JsonOnlineViewer" class="headerlink" title="JsonOnlineViewer"></a><a href="http://plugins.jetbrains.com/plugin/7838?pr=androidstudio" target="_blank" rel="external">JsonOnlineViewer</a></h1><p>在Android Studio中请求、调试接口</p>
+<p><a href="http://plugins.jetbrains.com/files/7838/screenshot_15113.png" target="_blank" rel="external"><img src="http://plugins.jetbrains.com/files/7838/screenshot_15113.png" alt="img"></a></p>
+<h1 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a><a href="https://plugins.jetbrains.com/plugin/8579-translation" target="_blank" rel="external">Translation</a></h1><p>Translation 是一个翻译插件，支持中英互译、单词朗读。<a href="http://yiiguxing.github.io/TranslationPlugin/start.html" target="_blank" rel="external">使用方法</a></p>
+<h1 id="Easyshortcut"><a href="#Easyshortcut" class="headerlink" title="Easyshortcut"></a><a href="http://chunsheng.me/EasyShortcut/" target="_blank" rel="external">Easyshortcut</a></h1><p>列举了常用快捷键以及其他小技能，显著提高工作效率。</p>
+<h1 id="CheckStyle-IDEA"><a href="#CheckStyle-IDEA" class="headerlink" title="CheckStyle-IDEA"></a><a href="https://plugins.jetbrains.com/plugin/1065?pr=" target="_blank" rel="external">CheckStyle-IDEA</a></h1><p>CheckStyle-IDEA 是一个检查代码风格的插件，比如像命名约定，Javadoc，类设计等方面进行代码规范和风格的检查，你们可以遵从像Google Oracle 的Java 代码指南 ，当然也可以按照自己的规则来设置配置文件，从而有效约束你自己更好地遵循代码编写规范。</p>
+<h1 id="Android-Methods-Count"><a href="#Android-Methods-Count" class="headerlink" title="Android Methods Count"></a><a href="http://plugins.jetbrains.com/plugin/8076?pr=androidstudio" target="_blank" rel="external">Android Methods Count</a></h1><p>显示依赖库中得方法数</p>
+<p><a href="http://plugins.jetbrains.com/files/8076/screenshot_15509.png" target="_blank" rel="external"><img src="http://plugins.jetbrains.com/files/8076/screenshot_15509.png" alt="img"></a></p>
+<h1 id="WakaTime"><a href="#WakaTime" class="headerlink" title="WakaTime"></a><a href="https://plugins.jetbrains.com/plugin/7425?pr=" target="_blank" rel="external">WakaTime</a></h1><p>github:<a href="https://github.com/wakatime/jetbrains-wakatime" target="_blank" rel="external">WakaTime</a><br>记录你在IDE上的工作时间</p>
+<p><a href="https://plugins.jetbrains.com/files/7425/screenshot_14794.png" target="_blank" rel="external"><img src="https://plugins.jetbrains.com/files/7425/screenshot_14794.png" alt="img"></a></p>
+<h1 id="Android-Code-Generator"><a href="#Android-Code-Generator" class="headerlink" title="Android Code Generator"></a><a href="http://plugins.jetbrains.com/plugin/7595?pr=androidstudio" target="_blank" rel="external">Android Code Generator</a></h1><p>根据布局文件快速生成对应的Activity，Fragment，Adapter，Menu。</p>
+<p><a href="http://plugins.jetbrains.com/files/7595/screenshot_14834.png" target="_blank" rel="external"><img src="http://plugins.jetbrains.com/files/7595/screenshot_14834.png" alt="img"></a><br><a href="http://plugins.jetbrains.com/files/7595/screenshot_14833.png" target="_blank" rel="external"><img src="http://plugins.jetbrains.com/files/7595/screenshot_14833.png" alt="img"></a></p>
+<h1 id="Android-Parcelable-code-generator"><a href="#Android-Parcelable-code-generator" class="headerlink" title="Android Parcelable code generator"></a><a href="http://plugins.jetbrains.com/plugin/7332?pr=androidstudio" target="_blank" rel="external">Android Parcelable code generator</a></h1><p>JavaBean序列化，快速实现Parcelable接口。</p>
+<p><a href="https://segmentfault.com/image?src=http://img.blog.csdn.net/20160416104459926&amp;objectId=1190000005092842&amp;token=ab29ed79d41be9e42b3a3d2ed1ec3bef" target="_blank" rel="external"><img src="https://segmentfault.com/image?src=http://img.blog.csdn.net/20160416104459926&amp;objectId=1190000005092842&amp;token=ab29ed79d41be9e42b3a3d2ed1ec3bef" alt="img"></a></p>
+<h1 id="CodeGlance"><a href="#CodeGlance" class="headerlink" title="CodeGlance"></a><a href="http://plugins.jetbrains.com/plugin/7275?pr=androidstudio" target="_blank" rel="external">CodeGlance</a></h1><p>在右边可以预览代码，实现快速定位</p>
+<h1 id="Android-Styler"><a href="#Android-Styler" class="headerlink" title="Android Styler"></a><a href="http://plugins.jetbrains.com/plugin/7972?pr=androidstudio" target="_blank" rel="external">Android Styler</a></h1><p>根据xml自动生成style代码的插件</p>
+<p><a href="http://plugins.jetbrains.com/files/7972/screenshot_15340.png" target="_blank" rel="external"><img src="http://plugins.jetbrains.com/files/7972/screenshot_15340.png" alt="img"></a><br><a href="http://plugins.jetbrains.com/files/7972/screenshot_15339.png" target="_blank" rel="external"><img src="http://plugins.jetbrains.com/files/7972/screenshot_15339.png" alt="img"></a><br><a href="http://plugins.jetbrains.com/files/7972/screenshot_15338.png" target="_blank" rel="external"><img src="http://plugins.jetbrains.com/files/7972/screenshot_15338.png" alt="img"></a></p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage:"></a>Usage:</h2><p>a. copy lines with future style from your layout.xml file<br>b. paste it to styles.xml file with Ctrl+Shift+D (or context menu)<br>c. enter name of new style in the modal window<br>d. your style is prepared!</p>
+<h1 id="Markdown-Navigator"><a href="#Markdown-Navigator" class="headerlink" title="Markdown Navigator"></a><a href="https://plugins.jetbrains.com/plugin/7896?pr=" target="_blank" rel="external">Markdown Navigator</a></h1><p>github:<a href="https://github.com/vsch/idea-multimarkdown/wiki" target="_blank" rel="external">Markdown Navigator</a><br>Markdown插件</p>
+<p><a href="https://plugins.jetbrains.com/files/7896/screenshot_15818.png" target="_blank" rel="external"><img src="https://plugins.jetbrains.com/files/7896/screenshot_15818.png" alt="img"></a></p>
+<h1 id="PermissionsDispatcher-plugin"><a href="#PermissionsDispatcher-plugin" class="headerlink" title="PermissionsDispatcher plugin"></a><a href="https://plugins.jetbrains.com/plugin/8349" target="_blank" rel="external">PermissionsDispatcher plugin</a></h1><p>github:<a href="https://github.com/shiraji/permissions-dispatcher-plugin" target="_blank" rel="external">PermissionsDispatcher plugin</a><br>自动生成6.0权限的代码</p>
+<p><a href="https://github.com/shiraji/permissions-dispatcher-plugin/raw/master/website/images/pd.gif" target="_blank" rel="external"><img src="https://github.com/shiraji/permissions-dispatcher-plugin/raw/master/website/images/pd.gif" alt="img"></a></p>
+<h1 id="ideaVim"><a href="#ideaVim" class="headerlink" title="ideaVim"></a><a href="http://plugins.jetbrains.com/plugin/164?pr=androidstudio" target="_blank" rel="external">ideaVim</a></h1><p>vim 本身就是一款很优秀的文本编辑器，而Android Studio 更是一款编写APP应用的神器。如果两个款优秀的软件结合在一起感觉会怎样呢？<br>详细请看文章:<a href="http://www.jianshu.com/p/43862126b88f" target="_blank" rel="external">Android Studio ＋Vim</a></p>
+<p><a href="http://upload-images.jianshu.io/upload_images/1825722-8b55d9654777599e.gif?imageMogr2/auto-orient/strip" target="_blank" rel="external"><img src="http://upload-images.jianshu.io/upload_images/1825722-8b55d9654777599e.gif?imageMogr2/auto-orient/strip" alt="img"></a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[利用 github 搭建博客的简单记录]]></title>
+      <url>/2017/05/07/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>利用 github 搭建博客的简单记录，具体操作可参考：<a href="http://www.jianshu.com/p/4eaddcbe4d12" target="_blank" rel="external">5 分钟 搭建免费个人博客</a></p>
+<a id="more"></a>
+<h3 id="创建-Github-域名和空间"><a href="#创建-Github-域名和空间" class="headerlink" title="创建 Github 域名和空间"></a>创建 Github 域名和空间</h3><h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><p>注册 Github 账号，注意 username 处，博客域名将会是 username.github.io</p>
+<h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>创建一个仓库来存储网站，Repository name 填写仓库名字为 username.github.io 其中 username 一定与注册时的 username 一致。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h4><h4 id="安装-Nodejs"><a href="#安装-Nodejs" class="headerlink" title="安装 Nodejs"></a>安装 Nodejs</h4><h4 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>参考: <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档| Hexo</a></p>
+<h3 id="编写，发布"><a href="#编写，发布" class="headerlink" title="编写，发布"></a>编写，发布</h3><p>需要用 Hexo 初始化一个博客</p>
+<h4 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h4><p>利用 Git Bash Here 输入指令 hexo init name.github.io</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init name.github.io</div></pre></td></tr></table></figure>
+<p> 注意上面的 name 自己定义，输入指令后，会创建一个名为 name.github.io 的文件夹</p>
+<h4 id="更改设置"><a href="#更改设置" class="headerlink" title="更改设置"></a>更改设置</h4><ul>
+<li>主题安装</li>
+</ul>
+<p>为了使博客不太难看，我们需要安装一个主题，切换至刚刚生成</p>
+<p>的Hexo 目录，安装主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd name.github.io</div><div class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
+<p>这里选了一个极简的主题，也是Hexo众多主题中最受欢迎的一个。上面出现的喵神的主题 在<a href="https://github.com/monniya/hexo-theme-new-vno" target="_blank" rel="external">这里</a>。Hexo也有<a href="https://hexo.io/themes/" target="_blank" rel="external">更多主题</a>供你选择</p>
+<ul>
+<li>基础配置</li>
+</ul>
+<p>打开文件位置 name.github.io/_config.yml 修改几个键值对，下面把几个必须设置的列出来按需求修改，记得保存， 还有注意配置的键值之间一定要有<strong>空格</strong>。<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">更多设置</a>…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">title: dimsky 的 9 维空间    //你博客的名字</div><div class="line">author: dimsky  //你的名字</div><div class="line">language: zh-Hans    //语言 中文</div><div class="line">theme: next   //刚刚安装的主题名称</div><div class="line">deploy:</div><div class="line">   type: git    //使用Git 发布</div><div class="line">   repo: https://github.com/username/username.github.io.git    // 刚创建的Github仓库</div></pre></td></tr></table></figure>
+<ul>
+<li>主题配置</li>
+</ul>
+<p>主题配置文件在 name.github.io/themes/next/<code>_config.yml</code>中修改，这里略过。<a href="http://theme-next.iissnan.com/getting-started.html#theme-settings" target="_blank" rel="external">设置详情</a></p>
+<h4 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h4><p>所有基础框架都已经创建完成，接下来可以开始写你的第一篇博客了<br>在 name.github.io/source/_posts 下创建你的第一个博客吧，例如，创建一个名为FirstNight.md 的文件，用 Markdown 大肆发挥吧，注意保存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: First Night</div><div class="line">---</div><div class="line">&gt; 我有一头**小毛驴**，可是我从来都不骑。</div></pre></td></tr></table></figure>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>测试服务启动，你可以在浏览器中输入<a href="https://localhost:4000/" target="_blank" rel="external">https://localhost:4000</a> 访问了。</p>
+<h4 id="安装hexo-deployer-git自动部署发布工具"><a href="#安装hexo-deployer-git自动部署发布工具" class="headerlink" title="安装hexo-deployer-git自动部署发布工具"></a>安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a>自动部署发布工具</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><p>测试没问题后，我们就生成静态网页文件发布至我们的Github pages 中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</div></pre></td></tr></table></figure>
+<p>如果这是你的第一次，终端会让你输入 Github 的邮箱和密码，正确输入后，骚等片刻，就会把你的博客上传至 Github 了。以后在每次把博客写完后，执行一下这个命令就可以直接发布了。</p>
+<h4 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h4><p>在浏览器中输入 <a href="https://username.github.io/" target="_blank" rel="external">https://username.github.io</a> 就能够访问了。</p>
+]]></content>
+      
+        
+    </entry>
+    
+  
+  
+</search>

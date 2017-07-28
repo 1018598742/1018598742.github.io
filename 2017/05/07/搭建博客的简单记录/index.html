@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="利用 github 搭建博客的简单记录"/>
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="时尚古人">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.4.x" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/05/07/搭建博客的简单记录/"/>
+
+
+<meta name="description" content="利用 github 搭建博客的简单记录，具体操作可参考：5 分钟 搭建免费个人博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用 github 搭建博客的简单记录">
+<meta property="og:url" content="http://yoursite.com/2017/05/07/搭建博客的简单记录/index.html">
+<meta property="og:site_name" content="时尚古人">
+<meta property="og:description" content="利用 github 搭建博客的简单记录，具体操作可参考：5 分钟 搭建免费个人博客">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2017-07-28T12:50:37.021Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用 github 搭建博客的简单记录">
+<meta name="twitter:description" content="利用 github 搭建博客的简单记录，具体操作可参考：5 分钟 搭建免费个人博客">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.4.x" />
+
+
+
+
+
+
+
+<script>
+  var CONFIG = {
+    search: false,
+    searchPath: "/search.xml",
+    fancybox: false,
+    toc: true,
+  }
+</script>
+
+
+
+
+  
+
+
+
+    <title> 利用 github 搭建博客的简单记录 · 时尚古人 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">时尚古人</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">时尚古人</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          利用 github 搭建博客的简单记录
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017年5月7日
+        </span>
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建-Github-域名和空间"><span class="toc-text">创建 Github 域名和空间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注册"><span class="toc-text">注册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建仓库"><span class="toc-text">创建仓库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git"><span class="toc-text">安装 Git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Nodejs"><span class="toc-text">安装 Nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Hexo"><span class="toc-text">安装 Hexo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写，发布"><span class="toc-text">编写，发布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建博客"><span class="toc-text">创建博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更改设置"><span class="toc-text">更改设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#写文章"><span class="toc-text">写文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装hexo-deployer-git自动部署发布工具"><span class="toc-text">安装hexo-deployer-git自动部署发布工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发布"><span class="toc-text">发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#访问"><span class="toc-text">访问</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>利用 github 搭建博客的简单记录，具体操作可参考：<a href="http://www.jianshu.com/p/4eaddcbe4d12" target="_blank" rel="external">5 分钟 搭建免费个人博客</a></p>
+<a id="more"></a>
+<h3 id="创建-Github-域名和空间"><a href="#创建-Github-域名和空间" class="headerlink" title="创建 Github 域名和空间"></a>创建 Github 域名和空间</h3><h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><p>注册 Github 账号，注意 username 处，博客域名将会是 username.github.io</p>
+<h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>创建一个仓库来存储网站，Repository name 填写仓库名字为 username.github.io 其中 username 一定与注册时的 username 一致。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h4><h4 id="安装-Nodejs"><a href="#安装-Nodejs" class="headerlink" title="安装 Nodejs"></a>安装 Nodejs</h4><h4 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>参考: <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档| Hexo</a></p>
+<h3 id="编写，发布"><a href="#编写，发布" class="headerlink" title="编写，发布"></a>编写，发布</h3><p>需要用 Hexo 初始化一个博客</p>
+<h4 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h4><p>利用 Git Bash Here 输入指令 hexo init name.github.io</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init name.github.io</div></pre></td></tr></table></figure>
+<p> 注意上面的 name 自己定义，输入指令后，会创建一个名为 name.github.io 的文件夹</p>
+<h4 id="更改设置"><a href="#更改设置" class="headerlink" title="更改设置"></a>更改设置</h4><ul>
+<li>主题安装</li>
+</ul>
+<p>为了使博客不太难看，我们需要安装一个主题，切换至刚刚生成</p>
+<p>的Hexo 目录，安装主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd name.github.io</div><div class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
+<p>这里选了一个极简的主题，也是Hexo众多主题中最受欢迎的一个。上面出现的喵神的主题 在<a href="https://github.com/monniya/hexo-theme-new-vno" target="_blank" rel="external">这里</a>。Hexo也有<a href="https://hexo.io/themes/" target="_blank" rel="external">更多主题</a>供你选择</p>
+<ul>
+<li>基础配置</li>
+</ul>
+<p>打开文件位置 name.github.io/_config.yml 修改几个键值对，下面把几个必须设置的列出来按需求修改，记得保存， 还有注意配置的键值之间一定要有<strong>空格</strong>。<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">更多设置</a>…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">title: dimsky 的 9 维空间    //你博客的名字</div><div class="line">author: dimsky  //你的名字</div><div class="line">language: zh-Hans    //语言 中文</div><div class="line">theme: next   //刚刚安装的主题名称</div><div class="line">deploy:</div><div class="line">   type: git    //使用Git 发布</div><div class="line">   repo: https://github.com/username/username.github.io.git    // 刚创建的Github仓库</div></pre></td></tr></table></figure>
+<ul>
+<li>主题配置</li>
+</ul>
+<p>主题配置文件在 name.github.io/themes/next/<code>_config.yml</code>中修改，这里略过。<a href="http://theme-next.iissnan.com/getting-started.html#theme-settings" target="_blank" rel="external">设置详情</a></p>
+<h4 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h4><p>所有基础框架都已经创建完成，接下来可以开始写你的第一篇博客了<br>在 name.github.io/source/_posts 下创建你的第一个博客吧，例如，创建一个名为FirstNight.md 的文件，用 Markdown 大肆发挥吧，注意保存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: First Night</div><div class="line">---</div><div class="line">&gt; 我有一头**小毛驴**，可是我从来都不骑。</div></pre></td></tr></table></figure>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>测试服务启动，你可以在浏览器中输入<a href="https://localhost:4000/" target="_blank" rel="external">https://localhost:4000</a> 访问了。</p>
+<h4 id="安装hexo-deployer-git自动部署发布工具"><a href="#安装hexo-deployer-git自动部署发布工具" class="headerlink" title="安装hexo-deployer-git自动部署发布工具"></a>安装<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a>自动部署发布工具</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><p>测试没问题后，我们就生成静态网页文件发布至我们的Github pages 中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</div></pre></td></tr></table></figure>
+<p>如果这是你的第一次，终端会让你输入 Github 的邮箱和密码，正确输入后，骚等片刻，就会把你的博客上传至 Github 了。以后在每次把博客写完后，执行一下这个命令就可以直接发布了。</p>
+<h4 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h4><p>在浏览器中输入 <a href="https://username.github.io/" target="_blank" rel="external">https://username.github.io</a> 就能够访问了。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/05/07/Android Studio 插件/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Android Studio 插件</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:18201691752@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">时尚古人</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.4.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.4.x"></script>
+
+    
+  </body>
+</html>
