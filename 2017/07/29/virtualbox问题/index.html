@@ -12,7 +12,7 @@
 
 
 
-  <meta name="description" content="隐式意图匹配"/>
+  <meta name="description" content="virtualbox问题"/>
 
 
 
@@ -29,20 +29,24 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2017/07/28/隐式意图匹配/"/>
+<link rel="canonical" href="http://yoursite.com/2017/07/29/virtualbox问题/"/>
 
 
-<meta name="description" content="隐式意图匹配规则">
+<meta name="description" content="virtualbox 的打不开的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="隐式意图匹配">
-<meta property="og:url" content="http://yoursite.com/2017/07/28/隐式意图匹配/index.html">
+<meta property="og:title" content="virtualbox问题">
+<meta property="og:url" content="http://yoursite.com/2017/07/29/virtualbox问题/index.html">
 <meta property="og:site_name" content="时尚古人">
-<meta property="og:description" content="隐式意图匹配规则">
+<meta property="og:description" content="virtualbox 的打不开的问题">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-07-28T13:54:57.481Z">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/vb1.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/vb2.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/vb3.png">
+<meta property="og:updated_time" content="2017-07-29T00:11:17.130Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="隐式意图匹配">
-<meta name="twitter:description" content="隐式意图匹配规则">
+<meta name="twitter:title" content="virtualbox问题">
+<meta name="twitter:description" content="virtualbox 的打不开的问题">
+<meta name="twitter:image" content="c:/Users/Administrator/Desktop/vb1.png">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.4.x" />
@@ -69,7 +73,7 @@
 
 
 
-    <title> 隐式意图匹配 · 时尚古人 </title>
+    <title> virtualbox问题 · 时尚古人 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -186,36 +190,34 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          隐式意图匹配
+          virtualbox问题
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2017年7月28日
+          2017年7月29日
         </span>
       </div>
     </header>
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-box-打不开时可以通过修改注册表"><span class="toc-text">virtual box 打不开时可以通过修改注册表</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        <p>隐式意图匹配规则</p>
+        <p>virtualbox 的打不开的问题</p>
 <a id="more"></a>
-<ul>
-<li>规则一：一个意图过滤器（intent-filter）至少包含一个 action , 否则它将阻塞所有意图匹配成功。</li>
-<li>规则二：一个意图（intent）中至少包含一个 action ,否则它将永远不会匹配成功。</li>
-<li>规则三：当采用隐式意图使用 startActivity(intent) 方法激活目标组件时，由于方法 startActivity(intent) 内部会自动做如下动作：intent.addCategory(“android.intent.category.DEFAULT”); 因此 intent 中必须包含 category=”android.intent.category.DEFAULT” 的类别，因此如果目标 Activity 想匹配成功，则必须在意图过滤器中包含 <category android:name="android.intent.category.DEFAULT"> 的类别，否则肯定不会匹配成功。</category></li>
-<li>规则四：如果意图过滤器中有的东西，在意图中可以没有照样匹配成功，反过来，如果意图中有的东西，在意图过滤器中没有则一定不会匹配成功。</li>
-<li>规则五：在一个 activity 中可以写多个意图过滤器，只要有一个能够和 intent 中的信息匹配成功则就可以激活目标组件。</li>
-<li>规则六：如果在意图过滤器中指定了 mimeType 则在意图中也必须指定相同的 mimeType ，否则匹配失败。</li>
-<li>规则七：如果在意图过滤器中指定了 scheme ，则在意图中设置 data 时必须也指定相同的 scheme ，否则匹配失败；如果同时在意图过滤器中也指定了 host ，那么只有当 intent 中 data 的内容也能和意图过滤器中的 scheme 和 host 相匹配才能成功。 如果同时指定了 path 或者 android:pathPrefix 或者 android:pathPattern ,那么意图中如果指定的 data 的内容整个和 path 或者 android:pathPrefix 或者 android:pathPattern 匹配成功即可匹配成功。</li>
-<li>规则八：如果在意图过滤器中只设置了 data 没有设置 type, 那么意图中也只能设置 data 不能设置 type 才能匹配成功。intetn.setData(data);</li>
-<li>规则九：如果在意图过滤器中只设置了 type 没有设置 data ，那么意图中也只能设置 type 不设置 data 才能匹配成功。intetn.setType(type);</li>
-<li>规则十：如果在意图过滤器中同时设置了 data 和 type ，那么在意图中也必须同时设置 data 和 type 才能匹配成功。 intent.setDataAndType(data,type); </li>
-</ul>
+<h3 id="virtual-box-打不开时可以通过修改注册表"><a href="#virtual-box-打不开时可以通过修改注册表" class="headerlink" title="virtual box 打不开时可以通过修改注册表"></a>virtual box 打不开时可以通过修改注册表</h3><p><img src="C:\Users\Administrator\Desktop\vb1.png" alt="vb1"></p>
+<p><img src="C:\Users\Administrator\Desktop\vb2.png" alt="vb2"></p>
+<p><img src="C:\Users\Administrator\Desktop\vb3.png" alt="vb3"></p>
 
       
     </div>
@@ -237,15 +239,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/07/29/virtualbox问题/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">virtualbox问题</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
     
-    
-      <a class="next" href="/2017/07/28/hello-world/">
-        <span class="next-text nav-default">Hello World</span>
+      <a class="next" href="/2017/07/28/隐式意图匹配/">
+        <span class="next-text nav-default">隐式意图匹配</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
