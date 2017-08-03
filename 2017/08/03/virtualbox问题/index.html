@@ -12,6 +12,8 @@
 
 
 
+  <meta name="description" content="virtualbox问题"/>
+
 
 
 
@@ -27,16 +29,24 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/archives/2017/07/"/>
+<link rel="canonical" href="http://yoursite.com/2017/08/03/virtualbox问题/"/>
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="时尚古人">
-<meta property="og:url" content="http://yoursite.com/archives/2017/07/index.html">
+<meta name="description" content="virtualbox 的打不开的问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="virtualbox问题">
+<meta property="og:url" content="http://yoursite.com/2017/08/03/virtualbox问题/index.html">
 <meta property="og:site_name" content="时尚古人">
+<meta property="og:description" content="virtualbox 的打不开的问题">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://yoursite.com/2017/08/03/virtualbox问题/vb1.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/03/virtualbox问题/vb2.png">
+<meta property="og:image" content="http://yoursite.com/2017/08/03/virtualbox问题/vb3.png">
+<meta property="og:updated_time" content="2017-08-03T14:28:58.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="时尚古人">
+<meta name="twitter:title" content="virtualbox问题">
+<meta name="twitter:description" content="virtualbox 的打不开的问题">
+<meta name="twitter:image" content="http://yoursite.com/2017/08/03/virtualbox问题/vb1.png">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.4.x" />
@@ -65,11 +75,7 @@
 
 
 
-    <title>
-  
-    归档 · 时尚古人
-  
-</title>
+    <title> virtualbox问题 · 时尚古人 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -190,96 +196,89 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title">
-          <h2 class="archive-name"> All </h2>
-          <span class="archive-post-counter">
-            目前共计 16 篇日志
-          </span>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          virtualbox问题
+        
+      </h1>
 
-    
-      
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year">2017</h2>
-          </div>
-        
-      
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            07-29
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/07/29/testhexo/" class="archive-post-link">
-            testhexo
-          </a>
+      <div class="post-meta">
+        <span class="post-time">
+          2017年8月3日
         </span>
       </div>
-    
-      
-        
-        
+    </header>
 
-        
-      
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            07-28
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/07/28/隐式意图匹配/" class="archive-post-link">
-            隐式意图匹配
-          </a>
-        </span>
-      </div>
     
-      
-        
-        
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-box-打不开时可以通过修改注册表"><span class="toc-text">virtual box 打不开时可以通过修改注册表</span></a></li></ol>
+    </div>
+  </div>
 
-        
-      
-      
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            07-28
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/07/28/hello-world/" class="archive-post-link">
-            Hello World
-          </a>
-        </span>
-      </div>
-    
-  </section>
 
-  
-  <nav class="pagination">
+    <div class="post-content">
+      
+        <p>virtualbox 的打不开的问题</p>
+<a id="more"></a>
+<h3 id="virtual-box-打不开时可以通过修改注册表"><a href="#virtual-box-打不开时可以通过修改注册表" class="headerlink" title="virtual box 打不开时可以通过修改注册表"></a>virtual box 打不开时可以通过修改注册表</h3><ol>
+<li><p>regedit</p>
+</li>
+<li><p>计算机\HKEY_CLASSES_ROOT\CLSID\{ 00020420-0000-0000-C000-000000000046}\InprocServer32</p>
+<p>计算机\HKEY_CLASSES_ROOT\CLSID\{ 00020424-0000-0000-C000-000000000046}\InprocServer32</p>
+</li>
+<li><p>默认值修改为C:\Windows\System32\oleaut32.dll</p>
+<p>​</p>
+</li>
+</ol>
+<img src="/2017/08/03/virtualbox问题/vb1.png" alt="vb1" title="vb1">
+<img src="/2017/08/03/virtualbox问题/vb2.png" alt="vb2" title="vb2">
+<img src="/2017/08/03/virtualbox问题/vb3.png" alt="vb3" title="vb3">
+      
+    </div>
+
     
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/07/29/testhexo/">
+        <span class="next-text nav-default">testhexo</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>  
       </main>
@@ -354,6 +353,8 @@
     </div>
 
     
+  
+
 
 
     

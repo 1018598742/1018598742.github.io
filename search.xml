@@ -3,24 +3,34 @@
   
     
     <entry>
+      <title><![CDATA[virtualbox问题]]></title>
+      <url>/2017/08/03/virtualbox%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>virtualbox 的打不开的问题</p>
+<a id="more"></a>
+<h3 id="virtual-box-打不开时可以通过修改注册表"><a href="#virtual-box-打不开时可以通过修改注册表" class="headerlink" title="virtual box 打不开时可以通过修改注册表"></a>virtual box 打不开时可以通过修改注册表</h3><ol>
+<li><p>regedit</p>
+</li>
+<li><p>计算机\HKEY_CLASSES_ROOT\CLSID\{ 00020420-0000-0000-C000-000000000046}\InprocServer32</p>
+<p>计算机\HKEY_CLASSES_ROOT\CLSID\{ 00020424-0000-0000-C000-000000000046}\InprocServer32</p>
+</li>
+<li><p>默认值修改为C:\Windows\System32\oleaut32.dll</p>
+<p>​</p>
+</li>
+</ol>
+<img src="/2017/08/03/virtualbox问题/vb1.png" alt="vb1" title="vb1">
+<img src="/2017/08/03/virtualbox问题/vb2.png" alt="vb2" title="vb2">
+<img src="/2017/08/03/virtualbox问题/vb3.png" alt="vb3" title="vb3">]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[testhexo]]></title>
       <url>/2017/07/29/testhexo/</url>
       <content type="html"><![CDATA[<p><img src="/vb1.png" alt="vb1"></p>
 <a id="more"></a>
 <img src="/2017/07/29/testhexo/vb1.png" alt="This is an example image" title="This is an example image">
 ]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[virtualbox问题]]></title>
-      <url>/2017/07/29/virtualbox%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<p>virtualbox 的打不开的问题</p>
-<a id="more"></a>
-<h3 id="virtual-box-打不开时可以通过修改注册表"><a href="#virtual-box-打不开时可以通过修改注册表" class="headerlink" title="virtual box 打不开时可以通过修改注册表"></a>virtual box 打不开时可以通过修改注册表</h3><img src="/2017/07/29/virtualbox问题/vb1.png" alt="vb1" title="vb1">
-<img src="/2017/07/29/virtualbox问题/vb2.png" alt="vb2" title="vb2">
-<img src="/2017/07/29/virtualbox问题/vb3.png" alt="vb3" title="vb3">]]></content>
       
         
     </entry>
