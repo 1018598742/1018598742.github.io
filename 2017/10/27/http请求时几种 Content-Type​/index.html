@@ -12,7 +12,7 @@
 
 
 
-  <meta name="description" content="virtualbox问题"/>
+  <meta name="description" content="http请求时几种 Content-Type"/>
 
 
 
@@ -29,24 +29,20 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2017/07/29/virtualbox问题/"/>
+<link rel="canonical" href="http://yoursite.com/2017/10/27/http请求时几种 Content-Type​/"/>
 
 
-<meta name="description" content="virtualbox 的打不开的问题">
+<meta name="description" content="关于 http 请求时的 Content-Type">
 <meta property="og:type" content="article">
-<meta property="og:title" content="virtualbox问题">
-<meta property="og:url" content="http://yoursite.com/2017/07/29/virtualbox问题/index.html">
+<meta property="og:title" content="http请求时几种 Content-Type">
+<meta property="og:url" content="http://yoursite.com/2017/10/27/http请求时几种 Content-Type​/index.html">
 <meta property="og:site_name" content="时尚古人">
-<meta property="og:description" content="virtualbox 的打不开的问题">
+<meta property="og:description" content="关于 http 请求时的 Content-Type">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://yoursite.com/2017/07/29/virtualbox问题/vb1.png">
-<meta property="og:image" content="http://yoursite.com/2017/07/29/virtualbox问题/vb2.png">
-<meta property="og:image" content="http://yoursite.com/2017/07/29/virtualbox问题/vb3.png">
-<meta property="og:updated_time" content="2017-07-29T00:44:01.095Z">
+<meta property="og:updated_time" content="2017-10-27T15:23:18.150Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="virtualbox问题">
-<meta name="twitter:description" content="virtualbox 的打不开的问题">
-<meta name="twitter:image" content="http://yoursite.com/2017/07/29/virtualbox问题/vb1.png">
+<meta name="twitter:title" content="http请求时几种 Content-Type">
+<meta name="twitter:description" content="关于 http 请求时的 Content-Type">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.4.x" />
@@ -75,7 +71,7 @@
 
 
 
-    <title> virtualbox问题 · 时尚古人 </title>
+    <title> http请求时几种 Content-Type · 时尚古人 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -200,34 +196,37 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          virtualbox问题
+          http请求时几种 Content-Type
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2017年7月29日
+          2017年10月27日
         </span>
       </div>
     </header>
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#virtual-box-打不开时可以通过修改注册表"><span class="toc-text">virtual box 打不开时可以通过修改注册表</span></a></li></ol>
-    </div>
-  </div>
-
 
     <div class="post-content">
       
-        <p>virtualbox 的打不开的问题</p>
+        <p>关于 http 请求时的 Content-Type</p>
 <a id="more"></a>
-<h3 id="virtual-box-打不开时可以通过修改注册表"><a href="#virtual-box-打不开时可以通过修改注册表" class="headerlink" title="virtual box 打不开时可以通过修改注册表"></a>virtual box 打不开时可以通过修改注册表</h3><img src="/2017/07/29/virtualbox问题/vb1.png" alt="vb1" title="vb1">
-<img src="/2017/07/29/virtualbox问题/vb2.png" alt="vb2" title="vb2">
-<img src="/2017/07/29/virtualbox问题/vb3.png" alt="vb3" title="vb3">
+<p>箭头前面的是根据 postman 几个不同 body 类型</p>
+<ul>
+<li>form-data —&gt; Content-Type: multipart/form-data; boundary=—-WebKitFormBoundarymApcIiUqyjQYSvXh</li>
+<li>x-www-form-urlencoded —&gt; Content-Type: application/x-www-form-urlencoded</li>
+<li>raw(Text) —&gt; Content-Type: text/plain;charset=UTF-8</li>
+<li>raw(JSON) —&gt; Content-Type: application/json</li>
+<li>raw (javascript) —&gt; Content-Type: application/javascript</li>
+<li>raw (XML) —&gt; Content-Type: application/xml</li>
+<li>raw (XML) —&gt; Content-Type: text/xml</li>
+<li>raw (HTML) —&gt; Content-Type: text/html</li>
+<li>binary —&gt; Content-Type: text/html (2进制文件上传，当是 txt 文件时显示的内容为 txt 文件中的内容)</li>
+</ul>
+
       
     </div>
 
@@ -248,15 +247,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2017/07/29/testhexo/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">testhexo</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
     
-    
-      <a class="next" href="/2017/07/28/隐式意图匹配/">
-        <span class="next-text nav-default">隐式意图匹配</span>
+      <a class="next" href="/2017/08/03/virtualbox问题/">
+        <span class="next-text nav-default">virtualbox问题</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>

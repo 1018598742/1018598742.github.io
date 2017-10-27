@@ -3,6 +3,28 @@
   
     
     <entry>
+      <title><![CDATA[http请求时几种 Content-Type]]></title>
+      <url>/2017/10/27/http%E8%AF%B7%E6%B1%82%E6%97%B6%E5%87%A0%E7%A7%8D%20Content-Type%E2%80%8B/</url>
+      <content type="html"><![CDATA[<p>关于 http 请求时的 Content-Type</p>
+<a id="more"></a>
+<p>箭头前面的是根据 postman 几个不同 body 类型</p>
+<ul>
+<li>form-data —&gt; Content-Type: multipart/form-data; boundary=—-WebKitFormBoundarymApcIiUqyjQYSvXh</li>
+<li>x-www-form-urlencoded —&gt; Content-Type: application/x-www-form-urlencoded</li>
+<li>raw(Text) —&gt; Content-Type: text/plain;charset=UTF-8</li>
+<li>raw(JSON) —&gt; Content-Type: application/json</li>
+<li>raw (javascript) —&gt; Content-Type: application/javascript</li>
+<li>raw (XML) —&gt; Content-Type: application/xml</li>
+<li>raw (XML) —&gt; Content-Type: text/xml</li>
+<li>raw (HTML) —&gt; Content-Type: text/html</li>
+<li>binary —&gt; Content-Type: text/html (2进制文件上传，当是 txt 文件时显示的内容为 txt 文件中的内容)</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[virtualbox问题]]></title>
       <url>/2017/08/03/virtualbox%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>virtualbox 的打不开的问题</p>
