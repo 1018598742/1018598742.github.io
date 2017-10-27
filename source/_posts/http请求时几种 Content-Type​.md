@@ -1,8 +1,8 @@
-```
+---
 title: http请求时几种 Content-Type
 date: 2017年10月27日 23:10:42
 
-```
+---
 
 关于 http 请求时的 Content-Type
 
