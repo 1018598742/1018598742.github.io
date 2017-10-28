@@ -17,7 +17,7 @@
 <li>raw (XML) —&gt; Content-Type: application/xml</li>
 <li>raw (XML) —&gt; Content-Type: text/xml</li>
 <li>raw (HTML) —&gt; Content-Type: text/html</li>
-<li>binary —&gt; Content-Type: text/html (2进制文件上传，当是 txt 文件时显示的内容为 txt 文件中的内容)</li>
+<li>binary —&gt; Content-Type: application/octet-stream (2进制文件上传，当是 txt 文件时显示的内容为 txt 文件中的内容)</li>
 </ul>
 ]]></content>
       
