@@ -18,4 +18,4 @@ date: 2017年10月27日 23:10:42
 - raw (XML) ---> Content-Type: application/xml
 - raw (XML) ---> Content-Type: text/xml
 - raw (HTML) ---> Content-Type: text/html
-- binary ---> Content-Type: text/html (2进制文件上传，当是 txt 文件时显示的内容为 txt 文件中的内容)
+- binary ---> Content-Type: application/octet-stream (2进制文件上传，当是 txt 文件时显示的内容为 txt 文件中的内容)
